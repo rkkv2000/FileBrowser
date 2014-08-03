@@ -21,7 +21,7 @@ import com.filebrowser.filetree.TreeFileLoader;
 public class FileBrowserController {
 	
 	public static final String MAPPED_PATH = "/service/getFileTree/";
-	//the mapping method
+	//the mapping method 
 	@RequestMapping(method = RequestMethod.POST)
 	public FileTreeJsonString getJsonFileTree(HttpServletRequest request) {
 		String completeUrl = (String) request
@@ -49,7 +49,7 @@ public class FileBrowserController {
 		if (System.getProperty("os.name").toLowerCase().contains(("Windows").toLowerCase()))
 		return name; //for Windows
 		else
-		return "/" + name; //for Linux,Unix and Mac
+		return "/" + name; //for Linux,Unix and Mac OS
 		
 	
 		
