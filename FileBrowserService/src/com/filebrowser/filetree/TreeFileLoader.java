@@ -1,3 +1,4 @@
+package com.filebrowser.filetree;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +8,7 @@ import com.google.gson.GsonBuilder;
 
 public class TreeFileLoader {
 
-    private static final String STARTING_PATH = "E:/eclipse";
+    private static final String STARTING_PATH = "/Users/rajkiranveluri/Desktop/MyFolder";
 
     public static void main(String[] args) {
         TreeFileLoader tt = new TreeFileLoader();
@@ -16,7 +17,7 @@ public class TreeFileLoader {
         
         
         
-        tt.printTree(rootNode);
+       tt.printTree(rootNode);
       //  System.out.println(rootNode);
         
     }
@@ -90,5 +91,20 @@ public class TreeFileLoader {
         //System.out.println(jon);
         
        return json;
+    }
+    /**
+     * Returns a JSON string representation of the tree whose root is startingPath
+     *
+     * @param startingPath The root whose JSON string representation is to be fetched
+     * @return The JSON string representation of the tree
+     */
+    public String getJsonTreeFromStartingPath(String startingPath){
+    	
+        FileNode<File> rootNode = getTree(startingPath);
+        
+        
+        
+        
+       return getJsonTree(rootNode);
     }
 }
